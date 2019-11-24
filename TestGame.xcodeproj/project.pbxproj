@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38F9248E238B158A00865BD6 /* game_over.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38F9248B238B158A00865BD6 /* game_over.mp3 */; };
-		38F9248F238B158A00865BD6 /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 38F9248C238B158A00865BD6 /* background.wav */; };
-		38F92490238B158A00865BD6 /* eating.wav in Resources */ = {isa = PBXBuildFile; fileRef = 38F9248D238B158A00865BD6 /* eating.wav */; };
+		38F92497238B1DC800865BD6 /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 38F92496238B1DC800865BD6 /* background.wav */; };
 		660B04EA2388D08400EAE1FE /* moonImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 660B04E92388D08400EAE1FE /* moonImages.atlas */; };
 		6616ADDC23887BE300417E4A /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6616ADDB23887BE200417E4A /* StartScene.swift */; };
 		6616ADE223888F4E00417E4A /* cactusImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 6616ADE123888F4E00417E4A /* cactusImages.atlas */; };
@@ -42,12 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		38F9248B238B158A00865BD6 /* game_over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game_over.mp3; path = ../../../game_over.mp3; sourceTree = "<group>"; };
-		38F9248C238B158A00865BD6 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = background.wav; path = ../../../background.wav; sourceTree = "<group>"; };
-		38F9248D238B158A00865BD6 /* eating.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = eating.wav; path = ../../../eating.wav; sourceTree = "<group>"; };
 		38F92493238B1A9700865BD6 /* eating.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = eating.wav; sourceTree = "<group>"; };
 		38F92494238B1A9700865BD6 /* game_over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game_over.mp3; sourceTree = "<group>"; };
-		38F92495238B1A9700865BD6 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = background.wav; path = ../../background.wav; sourceTree = "<group>"; };
+		38F92496238B1DC800865BD6 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = background.wav; path = ../../background.wav; sourceTree = "<group>"; };
 		660B04E92388D08400EAE1FE /* moonImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = moonImages.atlas; sourceTree = "<group>"; };
 		6616ADDB23887BE200417E4A /* StartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
 		6616ADE123888F4E00417E4A /* cactusImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cactusImages.atlas; sourceTree = "<group>"; };
@@ -93,16 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		38F9248A238B157C00865BD6 /* sounds */ = {
-			isa = PBXGroup;
-			children = (
-				38F9248C238B158A00865BD6 /* background.wav */,
-				38F9248D238B158A00865BD6 /* eating.wav */,
-				38F9248B238B158A00865BD6 /* game_over.mp3 */,
-			);
-			path = sounds;
-			sourceTree = "<group>";
-		};
 		66237A8D237DF934008C7C52 = {
 			isa = PBXGroup;
 			children = (
@@ -126,10 +111,9 @@
 		66237A98237DF934008C7C52 /* TestGame */ = {
 			isa = PBXGroup;
 			children = (
-				38F92495238B1A9700865BD6 /* background.wav */,
+				38F92496238B1DC800865BD6 /* background.wav */,
 				38F92493238B1A9700865BD6 /* eating.wav */,
 				38F92494238B1A9700865BD6 /* game_over.mp3 */,
-				38F9248A238B157C00865BD6 /* sounds */,
 				660B04E92388D08400EAE1FE /* moonImages.atlas */,
 				6616ADE123888F4E00417E4A /* cactusImages.atlas */,
 				66237A99237DF934008C7C52 /* AppDelegate.swift */,
@@ -269,11 +253,9 @@
 			files = (
 				66237AA5237DF934008C7C52 /* Main.storyboard in Resources */,
 				66237AA7237DF938008C7C52 /* Assets.xcassets in Resources */,
-				38F9248E238B158A00865BD6 /* game_over.mp3 in Resources */,
+				38F92497238B1DC800865BD6 /* background.wav in Resources */,
 				6616ADE223888F4E00417E4A /* cactusImages.atlas in Resources */,
-				38F9248F238B158A00865BD6 /* background.wav in Resources */,
 				66237AAA237DF938008C7C52 /* LaunchScreen.storyboard in Resources */,
-				38F92490238B158A00865BD6 /* eating.wav in Resources */,
 				660B04EA2388D08400EAE1FE /* moonImages.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
