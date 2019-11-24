@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TestGame.xcodeproj">
+      location = "group:/Users/sammibaruch/Documents/NYU/iOS Programming Projects/TestGame/TestGame/GameOverScene.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/sammibaruch/Documents/NYU/iOS Programming Projects/TestGame/TestGame/burrito.png">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
