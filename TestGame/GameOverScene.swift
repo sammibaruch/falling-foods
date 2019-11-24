@@ -16,6 +16,7 @@ class GameOverScene: SKScene {
         self.theme = characterType
         super.init(size: size)
         
+        // set up the background image
         let background = SKSpriteNode(imageNamed: theme+"Background")
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.anchorPoint = CGPoint(x: 0.5, y:0.5)
@@ -23,33 +24,31 @@ class GameOverScene: SKScene {
         addChild(background)
         
         
-        
+        // set up the current score label
         let scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
         scoreLabel.text = "Your Score: " + String(score)
         scoreLabel.fontSize = 40
-        //        scoreLabel.fontColor = SKColor.blue
         scoreLabel.position = CGPoint(x: size.width/2, y: size.height*3/4)
-        
         addChild(scoreLabel)
         
+        // set up the play again "button"
         let againLabel = SKLabelNode(fontNamed: "Chalkduster")
         againLabel.text = "Play Again"
         againLabel.fontSize = 35
-        //        againLabel.fontColor = SKColor.black
         againLabel.position = CGPoint(x: size.width/2, y: size.height/4)
         againLabel.name = "again"
-        
         addChild(againLabel)
         
+        // set up the home "button"
         let homeLabel = SKLabelNode(fontNamed: "Chalkduster")
         homeLabel.text = "Home"
         homeLabel.fontSize = 35
         homeLabel.fontColor = SKColor.black
         homeLabel.position = CGPoint(x: size.width/2, y: size.height/7)
         homeLabel.name = "home"
-        
         addChild(homeLabel)
         
+        // change font color based on theme
         if theme == "moon" {
             scoreLabel.fontColor = SKColor.yellow
             againLabel.fontColor = SKColor.white
@@ -72,6 +71,7 @@ class GameOverScene: SKScene {
         let touchedNode = self.atPoint(touchLocation)
         
         if let name = touchedNode.name {
+            // if again is pressed - go back to game screen
             if name == "again" {
                 run(SKAction.sequence([
                     SKAction.run() { [weak self] in
@@ -82,7 +82,7 @@ class GameOverScene: SKScene {
                     }
                     ]))
             }
-                
+            // if home is pressed - go back to home screen
             else if name == "home" {
                 run(SKAction.sequence([
                     SKAction.run() { [weak self] in
