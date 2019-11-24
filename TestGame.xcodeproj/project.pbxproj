@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38F92497238B1DC800865BD6 /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 38F92496238B1DC800865BD6 /* background.wav */; };
 		660B04EA2388D08400EAE1FE /* moonImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 660B04E92388D08400EAE1FE /* moonImages.atlas */; };
 		6616ADDC23887BE300417E4A /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6616ADDB23887BE200417E4A /* StartScene.swift */; };
 		6616ADE223888F4E00417E4A /* cactusImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 6616ADE123888F4E00417E4A /* cactusImages.atlas */; };
@@ -20,6 +19,7 @@
 		66237AB5237DF938008C7C52 /* TestGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66237AB4237DF938008C7C52 /* TestGameTests.swift */; };
 		66237AC0237DF938008C7C52 /* TestGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66237ABF237DF938008C7C52 /* TestGameUITests.swift */; };
 		6686C9AD238B12F900B3316E /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6686C9AC238B12F900B3316E /* GameOverScene.swift */; };
+		66F68B82238B206900C6CF1A /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66F68B81238B206900C6CF1A /* background.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,6 @@
 /* Begin PBXFileReference section */
 		38F92493238B1A9700865BD6 /* eating.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = eating.wav; sourceTree = "<group>"; };
 		38F92494238B1A9700865BD6 /* game_over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game_over.mp3; sourceTree = "<group>"; };
-		38F92496238B1DC800865BD6 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = background.wav; path = ../../background.wav; sourceTree = "<group>"; };
 		660B04E92388D08400EAE1FE /* moonImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = moonImages.atlas; sourceTree = "<group>"; };
 		6616ADDB23887BE200417E4A /* StartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
 		6616ADE123888F4E00417E4A /* cactusImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cactusImages.atlas; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		66237ABF237DF938008C7C52 /* TestGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGameUITests.swift; sourceTree = "<group>"; };
 		66237AC1237DF938008C7C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6686C9AC238B12F900B3316E /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		66F68B81238B206900C6CF1A /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 		66237A98237DF934008C7C52 /* TestGame */ = {
 			isa = PBXGroup;
 			children = (
-				38F92496238B1DC800865BD6 /* background.wav */,
+				66F68B81238B206900C6CF1A /* background.wav */,
 				38F92493238B1A9700865BD6 /* eating.wav */,
 				38F92494238B1A9700865BD6 /* game_over.mp3 */,
 				660B04E92388D08400EAE1FE /* moonImages.atlas */,
@@ -253,8 +253,8 @@
 			files = (
 				66237AA5237DF934008C7C52 /* Main.storyboard in Resources */,
 				66237AA7237DF938008C7C52 /* Assets.xcassets in Resources */,
-				38F92497238B1DC800865BD6 /* background.wav in Resources */,
 				6616ADE223888F4E00417E4A /* cactusImages.atlas in Resources */,
+				66F68B82238B206900C6CF1A /* background.wav in Resources */,
 				66237AAA237DF938008C7C52 /* LaunchScreen.storyboard in Resources */,
 				660B04EA2388D08400EAE1FE /* moonImages.atlas in Resources */,
 			);
@@ -461,13 +461,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D3MK7JPNP4;
+				DEVELOPMENT_TEAM = R286LA5JL3;
 				INFOPLIST_FILE = TestGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu123456789123456;
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.TestGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -479,13 +479,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D3MK7JPNP4;
+				DEVELOPMENT_TEAM = R286LA5JL3;
 				INFOPLIST_FILE = TestGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu123456789123456;
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu.TestGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
