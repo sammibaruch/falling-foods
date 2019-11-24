@@ -45,6 +45,9 @@
 		38F9248B238B158A00865BD6 /* game_over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game_over.mp3; path = ../../../game_over.mp3; sourceTree = "<group>"; };
 		38F9248C238B158A00865BD6 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = background.wav; path = ../../../background.wav; sourceTree = "<group>"; };
 		38F9248D238B158A00865BD6 /* eating.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = eating.wav; path = ../../../eating.wav; sourceTree = "<group>"; };
+		38F92493238B1A9700865BD6 /* eating.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = eating.wav; sourceTree = "<group>"; };
+		38F92494238B1A9700865BD6 /* game_over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game_over.mp3; sourceTree = "<group>"; };
+		38F92495238B1A9700865BD6 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = background.wav; path = ../../background.wav; sourceTree = "<group>"; };
 		660B04E92388D08400EAE1FE /* moonImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = moonImages.atlas; sourceTree = "<group>"; };
 		6616ADDB23887BE200417E4A /* StartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
 		6616ADE123888F4E00417E4A /* cactusImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cactusImages.atlas; sourceTree = "<group>"; };
@@ -123,6 +126,9 @@
 		66237A98237DF934008C7C52 /* TestGame */ = {
 			isa = PBXGroup;
 			children = (
+				38F92495238B1A9700865BD6 /* background.wav */,
+				38F92493238B1A9700865BD6 /* eating.wav */,
+				38F92494238B1A9700865BD6 /* game_over.mp3 */,
 				38F9248A238B157C00865BD6 /* sounds */,
 				660B04E92388D08400EAE1FE /* moonImages.atlas */,
 				6616ADE123888F4E00417E4A /* cactusImages.atlas */,
@@ -473,13 +479,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R286LA5JL3;
+				DEVELOPMENT_TEAM = D3MK7JPNP4;
 				INFOPLIST_FILE = TestGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.nyu.TestGame;
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu123456789123456;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -491,13 +497,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R286LA5JL3;
+				DEVELOPMENT_TEAM = D3MK7JPNP4;
 				INFOPLIST_FILE = TestGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.nyu.TestGame;
+				PRODUCT_BUNDLE_IDENTIFIER = nyu.edu123456789123456;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -97,7 +97,7 @@ class GameScene: SKScene {
         ))
         
         // add background music
-        let backgroundMusic = SKAudioNode(fileNamed: "sounds/background.wav")
+        let backgroundMusic = SKAudioNode(fileNamed: "background.wav")
         backgroundMusic.autoplayLooped = true
         addChild(backgroundMusic)
     }
