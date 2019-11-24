@@ -18,7 +18,7 @@
 		66237AAA237DF938008C7C52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66237AA8237DF938008C7C52 /* LaunchScreen.storyboard */; };
 		66237AB5237DF938008C7C52 /* TestGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66237AB4237DF938008C7C52 /* TestGameTests.swift */; };
 		66237AC0237DF938008C7C52 /* TestGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66237ABF237DF938008C7C52 /* TestGameUITests.swift */; };
-		667FDB192387A3F700D83F2B /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FDB182387A3F700D83F2B /* GameOverScene.swift */; };
+		6686C9AD238B12F900B3316E /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6686C9AC238B12F900B3316E /* GameOverScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 		66237ABB237DF938008C7C52 /* TestGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66237ABF237DF938008C7C52 /* TestGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGameUITests.swift; sourceTree = "<group>"; };
 		66237AC1237DF938008C7C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		667FDB182387A3F700D83F2B /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameOverScene.swift; path = "/Users/sammibaruch/Documents/NYU/iOS Programming Projects/TestGame/TestGame/GameOverScene.swift"; sourceTree = "<absolute>"; };
+		6686C9AC238B12F900B3316E /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +109,8 @@
 			children = (
 				660B04E92388D08400EAE1FE /* moonImages.atlas */,
 				6616ADE123888F4E00417E4A /* cactusImages.atlas */,
-				667FDB182387A3F700D83F2B /* GameOverScene.swift */,
 				66237A99237DF934008C7C52 /* AppDelegate.swift */,
+				6686C9AC238B12F900B3316E /* GameOverScene.swift */,
 				66237A9F237DF934008C7C52 /* GameScene.swift */,
 				66237AA1237DF934008C7C52 /* GameViewController.swift */,
 				6616ADDB23887BE200417E4A /* StartScene.swift */,
@@ -273,9 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6686C9AD238B12F900B3316E /* GameOverScene.swift in Sources */,
 				66237AA0237DF934008C7C52 /* GameScene.swift in Sources */,
 				66237AA2237DF934008C7C52 /* GameViewController.swift in Sources */,
-				667FDB192387A3F700D83F2B /* GameOverScene.swift in Sources */,
 				6616ADDC23887BE300417E4A /* StartScene.swift in Sources */,
 				66237A9A237DF934008C7C52 /* AppDelegate.swift in Sources */,
 			);

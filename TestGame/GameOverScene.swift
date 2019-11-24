@@ -1,8 +1,9 @@
 //
 //  GameOverScene.swift
-//  
+//  TestGame
 //
-//  Created by Sammi Baruch on 11/22/19.
+//  Created by Sammi Baruch on 11/24/19.
+//  Copyright © 2019 Sammi Baruch. All rights reserved.
 //
 
 import Foundation
@@ -26,7 +27,7 @@ class GameOverScene: SKScene {
         let scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
         scoreLabel.text = "Your Score: " + String(score)
         scoreLabel.fontSize = 40
-//        scoreLabel.fontColor = SKColor.blue
+        //        scoreLabel.fontColor = SKColor.blue
         scoreLabel.position = CGPoint(x: size.width/2, y: size.height*3/4)
         
         addChild(scoreLabel)
@@ -34,7 +35,7 @@ class GameOverScene: SKScene {
         let againLabel = SKLabelNode(fontNamed: "Chalkduster")
         againLabel.text = "Play Again"
         againLabel.fontSize = 35
-//        againLabel.fontColor = SKColor.black
+        //        againLabel.fontColor = SKColor.black
         againLabel.position = CGPoint(x: size.width/2, y: size.height/4)
         againLabel.name = "again"
         
@@ -59,7 +60,7 @@ class GameOverScene: SKScene {
             againLabel.fontColor = SKColor.black
             homeLabel.fontColor = SKColor.black
         }
-
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -81,7 +82,7 @@ class GameOverScene: SKScene {
                     }
                     ]))
             }
-            
+                
             else if name == "home" {
                 run(SKAction.sequence([
                     SKAction.run() { [weak self] in
