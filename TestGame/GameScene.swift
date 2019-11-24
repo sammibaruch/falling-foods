@@ -97,9 +97,9 @@ class GameScene: SKScene {
         ))
         
         // add background music
-//        let backgroundMusic = SKAudioNode(fileNamed: "background-music-aac.caf")
-//        backgroundMusic.autoplayLooped = true
-//        addChild(backgroundMusic)
+        let backgroundMusic = SKAudioNode(fileNamed: "sounds/background.wav")
+        backgroundMusic.autoplayLooped = true
+        addChild(backgroundMusic)
     }
     
     func randomFood() -> String {
