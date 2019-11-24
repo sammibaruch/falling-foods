@@ -8,9 +8,10 @@
 
 import SpriteKit
 import GameplayKit
+import ARKit
 import Foundation
 
-var foodLost = 0
+var lives = 0
 var foodEaten = 0
 
 struct PhysicsCategory {
@@ -21,9 +22,11 @@ struct PhysicsCategory {
     
 }
 
+let character = SKSpriteNode(imageNamed: "tester-close")
+
 class GameScene: SKScene {
     
-    let character = SKSpriteNode(imageNamed: "cactus")
+//    let character = SKSpriteNode(imageNamed: "tester-close")
     let scoreLabel = SKLabelNode()
     let lifeLabel = SKLabelNode()
     let background = SKSpriteNode(imageNamed: "cactusBackground")
@@ -33,7 +36,7 @@ class GameScene: SKScene {
         super.init(size: size)
         
         theme = characterType
-        character.texture = SKTexture(imageNamed: theme)
+        character.texture = SKTexture(imageNamed: "tester-close")
         background.texture = SKTexture(imageNamed: theme+"Background")
         
     }
@@ -42,11 +45,20 @@ class GameScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func checkMouthPosition() {
+        if mouthIsOpen {
+            character.texture = SKTexture(imageNamed: "tester-open")
+        }
+        else {
+            character.texture = SKTexture(imageNamed: "tester-close")
+        }
+    }
+    
     override func didMove(to view: SKView) {
         
         // reset score and lives
         foodEaten = 0
-        foodLost = 0
+        lives = 0
         
         // set up the background
         background.position = CGPoint(x: size.width/2, y: size.height/2)
@@ -92,9 +104,14 @@ class GameScene: SKScene {
         run(SKAction.repeatForever(
             SKAction.sequence([
                 SKAction.run(addFood),
-                SKAction.wait(forDuration:1.0)
-                ])
+                SKAction.wait(forDuration:1.0)])
         ))
+        
+//        run(SKAction.repeatForever(
+//            SKAction.sequence([
+//                SKAction.run(checkMouthPosition)
+//                ])
+//        ))
         
         // add background music
         let backgroundMusic = SKAudioNode(fileNamed: "background.wav")
@@ -135,8 +152,8 @@ class GameScene: SKScene {
         let actionMoveDone = SKAction.removeFromParent()
         let loseAction = SKAction.run() { [weak self] in
             guard let `self` = self else {return}
-            if foodLost < 2  && food.name != "pepper"{
-                foodLost += 1
+            if lives < 2  && food.name != "pepper"{
+                lives += 1
                 
                 if let lifeLabelText = self.lifeLabel.text {
                     self.lifeLabel.text = lifeLabelText + "X"
@@ -155,18 +172,35 @@ class GameScene: SKScene {
     }
     
     func characterDidCollideWithFood(character: SKSpriteNode, food: SKSpriteNode) {
-        
-        // add eating food sound
-//        run(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
-
-        // Ate bad food - game over!
-        if food.name == "pepper" {
-            gameOver()
+        if mouthIsOpen {
+            // add eating food sound
+            //        run(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
+            
+            // Ate bad food - game over!
+            if food.name == "pepper" {
+                gameOver()
+            }
+            food.removeFromParent()
+            foodEaten += 1
+            scoreLabel.text = String(foodEaten)
         }
-        food.removeFromParent()
-        foodEaten += 1
-        scoreLabel.text = String(foodEaten)
+        else {
+            if food.name != "pepper" {
+                lives += 1
+                if let lifeLabelText = self.lifeLabel.text {
+                    self.lifeLabel.text = lifeLabelText + "X"
+                }
+                else {
+                    self.lifeLabel.text = "X"
+                }
+                if lives >= 3 {
+                    gameOver()
+                }
+            }
+        }
     }
+    
+    
     
     func gameOver() {
         let reveal = SKTransition.flipVertical(withDuration: 0.5)

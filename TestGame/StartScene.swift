@@ -13,8 +13,8 @@ import GameplayKit
 
 class StartScene: SKScene {
     
-    private var character = SKSpriteNode()
-    private var characterChangingFrames: [SKTexture] = []
+//    private var character = SKSpriteNode()
+//    private var characterChangingFrames: [SKTexture] = []
     let background = SKSpriteNode(imageNamed: "cactusBackground")
     let nameLabel = SKLabelNode()
     let startLabel = SKLabelNode()
@@ -42,8 +42,10 @@ class StartScene: SKScene {
         addChild(background)
         
         // add the character to the screen
-        buildCharacter(character: theme)
-        animateCharacter(character: theme)
+//        buildCharacter(character: theme)
+//        animateCharacter(character: theme)
+        character.position = CGPoint(x: size.width/2, y: size.height/2)
+        addChild(character)
         
         // set up the name label
         nameLabel.text = "Falling Foods!"
@@ -119,9 +121,9 @@ class StartScene: SKScene {
                 startLabel.fontColor = SKColor.white
                 
                 // remove the old character and build new character
-                character.removeFromParent()
-                buildCharacter(character: theme)
-                animateCharacter(character: theme)
+//                character.removeFromParent()
+//                buildCharacter(character: theme)
+//                animateCharacter(character: theme)
             }
             
             // if user touches cactusTheme button - change theme to cactus
@@ -137,9 +139,9 @@ class StartScene: SKScene {
                 startLabel.fontColor = SKColor.black
                 
                 // remove the old character and build new character
-                character.removeFromParent()
-                buildCharacter(character: theme)
-                animateCharacter(character: theme)
+//                character.removeFromParent()
+//                buildCharacter(character: theme)
+//                animateCharacter(character: theme)
                 
             }
         }
@@ -171,32 +173,32 @@ class StartScene: SKScene {
         food.run(SKAction.sequence([actionMove, actionMoveDone]))
     }
     
-    func buildCharacter(character char: String) {
-        let characterAnimatedAtlas = SKTextureAtlas(named: char+"Images")
-        var characterFrames: [SKTexture] = []
-        
-        let numImages = characterAnimatedAtlas.textureNames.count
-        for i in 1...numImages {
-            let characterTextureName = char+"\(i)"
-            characterFrames.append(characterAnimatedAtlas.textureNamed(characterTextureName))
-        }
-        characterChangingFrames = characterFrames
-        
-        let firstFrameTexture = characterChangingFrames[0]
-        character = SKSpriteNode(texture: firstFrameTexture)
-        character.position = CGPoint(x: frame.midX, y: frame.midY)
-        addChild(character)
-        
-    }
-    
-    func animateCharacter(character char: String) {
-        character.run(SKAction.repeatForever(
-            SKAction.animate(with: characterChangingFrames,
-                             timePerFrame: 0.1,
-                             resize: true,
-                             restore: true)),
-                      withKey:"ChangingSize")
-    }
+//    func buildCharacter(character char: String) {
+//        let characterAnimatedAtlas = SKTextureAtlas(named: char+"Images")
+//        var characterFrames: [SKTexture] = []
+//
+//        let numImages = characterAnimatedAtlas.textureNames.count
+//        for i in 1...numImages {
+//            let characterTextureName = char+"\(i)"
+//            characterFrames.append(characterAnimatedAtlas.textureNamed(characterTextureName))
+//        }
+//        characterChangingFrames = characterFrames
+//
+//        let firstFrameTexture = characterChangingFrames[0]
+//        character = SKSpriteNode(texture: firstFrameTexture)
+//        character.position = CGPoint(x: frame.midX, y: frame.midY)
+//        addChild(character)
+//
+//    }
+//
+//    func animateCharacter(character char: String) {
+//        character.run(SKAction.repeatForever(
+//            SKAction.animate(with: characterChangingFrames,
+//                             timePerFrame: 0.1,
+//                             resize: true,
+//                             restore: true)),
+//                      withKey:"ChangingSize")
+//    }
     
     func addPhrase() {
         let phrase = SKSpriteNode(imageNamed: randomFood())
