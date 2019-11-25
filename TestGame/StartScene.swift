@@ -13,8 +13,8 @@ import GameplayKit
 
 class StartScene: SKScene {
     
-//    private var character = SKSpriteNode()
-//    private var characterChangingFrames: [SKTexture] = []
+    //private var character = SKSpriteNode()
+    //private var characterChangingFrames: [SKTexture] = []
     let background = SKSpriteNode(imageNamed: "cactusBackground")
     let nameLabel = SKLabelNode()
     let startLabel = SKLabelNode()
@@ -98,6 +98,7 @@ class StartScene: SKScene {
         // if user touches start button - move to GameScene (send theme info)
         if let name = touchedNode.name {
             if name == "start" {
+                character.removeFromParent()
                 run(SKAction.sequence([
                     SKAction.run() { [weak self] in
                         guard let `self` = self else {return}

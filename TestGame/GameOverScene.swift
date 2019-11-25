@@ -20,6 +20,7 @@ class GameOverScene: SKScene {
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.anchorPoint = CGPoint(x: 0.5, y:0.5)
         background.zPosition = -10000
+        removeAllChildren()
         addChild(background)
         
         
@@ -73,6 +74,7 @@ class GameOverScene: SKScene {
         
         if let name = touchedNode.name {
             if name == "again" {
+                character.removeFromParent()
                 run(SKAction.sequence([
                     SKAction.run() { [weak self] in
                         guard let `self` = self else {return}
@@ -84,6 +86,7 @@ class GameOverScene: SKScene {
             }
                 
             else if name == "home" {
+                character.removeFromParent()
                 run(SKAction.sequence([
                     SKAction.run() { [weak self] in
                         guard let `self` = self else {return}
