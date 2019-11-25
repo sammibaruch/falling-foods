@@ -25,6 +25,7 @@ class StartScene: SKScene {
         
         // set the theme
         theme = characterType
+        background.size = self.size
         background.texture = SKTexture(imageNamed: theme+"Background")
         if theme == "moon" {
             nameLabel.fontColor = SKColor.yellow
