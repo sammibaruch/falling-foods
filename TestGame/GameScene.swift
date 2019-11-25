@@ -115,7 +115,7 @@ class GameScene: SKScene {
     
     func randomFood() -> String {
         let rand = Int.random(in: 0 ..< 5)
-        let foods = ["burrito", "ice-cream", "pizza", "burger", "pepper"]
+        let foods = ["burrito", "ice-cream", "lolly", "burger", "pepper"]
         return foods[rand]
     }
     
