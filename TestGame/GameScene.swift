@@ -11,8 +11,8 @@ import GameplayKit
 import ARKit
 import Foundation
 
-var lives = 0
-var foodEaten = 0
+// declare global variables
+let character = SKSpriteNode(imageNamed: "tester-close")
 
 struct PhysicsCategory {
     static let none     : UInt32 = 0
@@ -22,10 +22,10 @@ struct PhysicsCategory {
     
 }
 
-let character = SKSpriteNode(imageNamed: "tester-close")
-
 class GameScene: SKScene {
     
+    var lives = 3
+    var foodEaten = 0
 //    let character = SKSpriteNode(imageNamed: "tester-close")
     let scoreLabel = SKLabelNode()
     let lifeLabel = SKLabelNode()
@@ -45,20 +45,13 @@ class GameScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func checkMouthPosition() {
-        if mouthIsOpen {
-            character.texture = SKTexture(imageNamed: "tester-open")
-        }
-        else {
-            character.texture = SKTexture(imageNamed: "tester-close")
-        }
-    }
+   
     
     override func didMove(to view: SKView) {
         
         // reset score and lives
         foodEaten = 0
-        lives = 0
+        lives = 3
         
         // set up the background
         background.position = CGPoint(x: size.width/2, y: size.height/2)
@@ -126,8 +119,6 @@ class GameScene: SKScene {
     }
     
     func addFood() {
-//        let foods = ["burrito", "ice-cream", "pizza", "burger", "pepper"]
-//        let randFood = foods.randomElement()
 
         let randFood = randomFood()
         let food = SKSpriteNode(imageNamed: randFood)
@@ -152,26 +143,13 @@ class GameScene: SKScene {
         let actionMoveDone = SKAction.removeFromParent()
         let loseAction = SKAction.run() { [weak self] in
             guard let `self` = self else {return}
-            if lives < 2  && food.name != "pepper"{
-                lives += 1
-                
-                if let lifeLabelText = self.lifeLabel.text {
-                    self.lifeLabel.text = lifeLabelText + "X"
-                }
-                else {
-                    self.lifeLabel.text = "X"
-                }
-            }
-            else {
-                if food.name != "pepper" {
-                    self.gameOver()
-                }
-            }
+            self.lostFood(food: food)
         }
         food.run(SKAction.sequence([actionMove, loseAction, actionMoveDone]))
     }
     
     func characterDidCollideWithFood(character: SKSpriteNode, food: SKSpriteNode) {
+        // if your mouth is open to "catch" the food
         if mouthIsOpen {
             // add eating food sound
             //        run(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
@@ -184,19 +162,9 @@ class GameScene: SKScene {
             foodEaten += 1
             scoreLabel.text = String(foodEaten)
         }
+        // mouth isn't open - lost food
         else {
-            if food.name != "pepper" {
-                lives += 1
-                if let lifeLabelText = self.lifeLabel.text {
-                    self.lifeLabel.text = lifeLabelText + "X"
-                }
-                else {
-                    self.lifeLabel.text = "X"
-                }
-                if lives >= 3 {
-                    gameOver()
-                }
-            }
+            lostFood(food: food)
         }
     }
     
@@ -207,8 +175,32 @@ class GameScene: SKScene {
         let gameOverScene = GameOverScene(size: self.size, score: foodEaten, characterType: self.theme)
         self.view?.presentScene(gameOverScene, transition: reveal)
     }
-
     
+    func lostFood(food: SKSpriteNode) {
+        // if you still have lives and lost food isn't "bad" food
+        if lives > 0  && food.name != "pepper"{
+            // decrease lives by one
+            lives -= 1
+            
+            // update the "life counter"
+            if let lifeLabelText = self.lifeLabel.text {
+                self.lifeLabel.text = lifeLabelText + "X"
+            }
+            else {
+                self.lifeLabel.text = "X"
+            }
+        }
+        // if you don't have any lives left
+        else {
+            // if lost lost food isn't "bad" food
+            if food.name != "pepper" {
+                // game over
+                gameOver()
+            }
+        }
+    }
+
+    // function to "drag" the character across the screen
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             return
@@ -218,10 +210,19 @@ class GameScene: SKScene {
         
         if (touchedNode.name == "character") {
             let xPos = touchLocation.x
+            // move the character's xPos but its yPos stays constant
             character.position = CGPoint(x: xPos, y: size.height * 0.2)
         }
     }
     
+//    func checkMouthPosition() {
+//        if mouthIsOpen {
+//            character.texture = SKTexture(imageNamed: "tester-open")
+//        }
+//        else {
+//            character.texture = SKTexture(imageNamed: "tester-close")
+//        }
+//    }
 }
 
 extension GameScene: SKPhysicsContactDelegate {

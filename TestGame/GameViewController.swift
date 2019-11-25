@@ -11,7 +11,10 @@ import SpriteKit
 import ARKit
 import GameplayKit
 
+// declare global variables
 var mouthIsOpen = false
+
+
 class GameViewController: UIViewController {
     
     let trackingView = ARSCNView()
