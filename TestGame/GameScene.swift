@@ -54,6 +54,7 @@ class GameScene: SKScene {
         lives = 3
         
         // set up the background
+        background.size = self.size
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.anchorPoint = CGPoint(x: 0.5, y:0.5)
         background.zPosition = -10000
@@ -114,7 +115,7 @@ class GameScene: SKScene {
     
     func randomFood() -> String {
         let rand = Int.random(in: 0 ..< 5)
-        let foods = ["burrito", "ice-cream", "pizza", "burger", "pepper"]
+        let foods = ["burrito", "ice-cream", "lolly", "burger", "pepper"]
         return foods[rand]
     }
     

@@ -25,6 +25,7 @@ class StartScene: SKScene {
         
         // set the theme
         theme = characterType
+        background.size = self.size
         background.texture = SKTexture(imageNamed: theme+"Background")
         if theme == "moon" {
             nameLabel.fontColor = SKColor.yellow
@@ -151,7 +152,7 @@ class StartScene: SKScene {
     
     func randomFood() -> String {
         let rand = Int.random(in: 0 ..< 5)
-        let foods = ["burrito", "ice-cream", "pizza", "burger", "pepper"]
+        let foods = ["burrito", "ice-cream", "lolly", "burger", "pepper"]
         return foods[rand]
     }
     

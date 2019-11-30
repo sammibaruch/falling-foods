@@ -18,6 +18,7 @@ class GameOverScene: SKScene {
         
         // set up the background image
         let background = SKSpriteNode(imageNamed: theme+"Background")
+        background.size = self.size
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.anchorPoint = CGPoint(x: 0.5, y:0.5)
         background.zPosition = -10000
